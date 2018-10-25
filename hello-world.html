@@ -10,20 +10,23 @@
 
 <!-- Registers custom element -->
 <script>
-Polymer({
-    is: 'hello-world',
-    properties: {
-        'value': {
-            type: String,
-            reflectToAttribute: true,
-            notify: true,
-            value: "text"
+  class HelloWorld extends Polymer.Element {
+    static get is() { return 'hello-world' }
+    static get properties() {
+      return {
+        value: {
+          type: String,
+          reflectToAttribute: true,
+          notify: true,
+          value: "text"
         },
         //variable with the text that follows Hello
         who: {
-            type: String,
-           value: 'World'
+          type: String,
+          value: 'World'
         }
+      }
     }
-});
+  }
+  customElements.define(HelloWorld.is, HelloWorld);
 </script>
